@@ -6,7 +6,7 @@ set host localhost
 set port 17020
 set HR_WORKSPACE $::env(HR_WORKSPACE)
 set OC_AIML_FILE $::env(OC_AIML_FILE)
-set OC_LOG_LEVEL $::env(OC_LOC_LEVEL)
+set OC_LOG_LEVEL $::env(OC_LOG_LEVEL)
 
 spawn telnet $host $port
 
