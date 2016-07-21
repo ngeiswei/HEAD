@@ -49,7 +49,7 @@ export NAME=robot
 export ROS_PYTHON_LOG_CONFIG_FILE="$BASEDIR/python_logging.conf"
 export ROSCONSOLE_FORMAT='[${logger}][${severity}] [${time}]: ${message}'
 export LAUNCH_DIR="$BASEDIR/../src/robots_config/launch/"
-export OC_LOG_LEVEL=info        # error, warn, info, debug and fine
+export OC_LOG_LEVEL=debug        # error, warn, info, debug and fine
 source $HR_WORKSPACE/$MAJOR_PROJECT/devel/setup.bash
 echo HR_WORKSPACE=$HR_WORKSPACE
 
@@ -70,7 +70,7 @@ if [[ $OC_CHATBOT == 1 ]]; then
     export OC_AIML_FILE=~/.hr/cache/res/load-all.scm
     if [[ ! -f ${OC_AIML_FILE} ]] ; then
       echo "Downloading OpenCog AIML file"
-      wget https://github.com/opencog/test-datasets/releases/download/current/aiml-current.tar.gz -O /tmp/aiml.tar.gz
+      wget -c https://github.com/opencog/test-datasets/releases/download/current/aiml-current.tar.gz -O /tmp/aiml.tar.gz
       tar zxf /tmp/aiml.tar.gz -C ~/.hr/cache
       rm /tmp/aiml.tar.gz
     fi
